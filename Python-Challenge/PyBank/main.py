@@ -4,6 +4,7 @@ import csv
 
 
 csvpath = os.path.join('Resources', 'budget_data.csv')
+output_path = os.path.join('Output', 'financial_analysis.csv')
 
 f = open(csvpath, "r")
 budget_data = list(csv.reader(f))
@@ -59,3 +60,13 @@ print(f'Total: ${pl_sum}')
 print(f'Average Change: ${avg_change:.2f}')
 print(f'Greatest Increase in Profits: {max_increase_date} (${max_increase})')
 print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
+
+with open(output_path, 'w') as csvfile:
+	csvwriter = csv.writer(csvfile, delimiter=',')
+	csvwriter.writerow(['Financial Analysis'])
+	csvwriter.writerow(['-----------------------------------'])
+	csvwriter.writerow([f'Total Months:  {total_months}'])
+	csvwriter.writerow([f'Total: ${pl_sum}'])
+	csvwriter.writerow([f'Average Change: ${avg_change:.2f}'])
+	csvwriter.writerow([f'Greatest Increase in Profits: {max_increase_date} (${max_increase})'])
+	csvwriter.writerow([f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})'])
