@@ -8,6 +8,7 @@ output_path = os.path.join('Output', 'financial_analysis.csv')
 
 f = open(csvpath, "r")
 budget_data = list(csv.reader(f))
+budget_data_header = budget_data[0]
 
 
 #Verify csv is being read correctly
