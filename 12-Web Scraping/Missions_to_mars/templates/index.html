@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Facts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mars Facts</h1>
+      <p>Press the button to get facts about mars (please be patient...)</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    
+    <h2>Latest Mars News</h2>
+    <h3><strong>{{ facts.news_title }}</strong></h3>
+    <p>{{ facts.news_headline }}</p>
+    <h2>Featured Mars Image</h2>
+    <img src="{{ facts.featured_image }}" alt="Mars">
+    <h3>Current weather on mars:</h3>
+    <p>{{ facts.mars_weather }}</p>
+    <h3>Mars Facts</h3>
+    {{ facts.facts_table }}
+    <h2>Mars Hemispheres</h2>
+    <img src="{{ facts.hemisphere_images[0]['image_url'] }}" alt="Mars" height="800">
+    <img src="{{ facts.hemisphere_images[1]['image_url'] }}" alt="Mars" height="800">
+    <img src="{{ facts.hemisphere_images[2]['image_url'] }}" alt="Mars" height="800">
+    <img src="{{ facts.hemisphere_images[3]['image_url'] }}" alt="Mars" height="800">
+  </div>
+  </div>
+  
+</body>
+
+</html>
+    
